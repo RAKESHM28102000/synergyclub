@@ -8,6 +8,7 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
+import { Link } from "react-router-dom"; // ✅ import Link
 import synergyLogo from "/images/synergy logo.png"; // replace with actual logo
 
 export default function Footer() {
@@ -17,7 +18,11 @@ export default function Footer() {
         
         {/* Left Section - Logo & Name */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <img src={synergyLogo} alt="Synergy Logo" className="w-16 h-16 mb-3 rounded-full" />
+          <img
+            src={synergyLogo}
+            alt="Synergy Logo"
+            className="w-16 h-16 mb-3 rounded-full"
+          />
           <h2 className="text-2xl font-bold">Synergy Club</h2>
           <p className="mt-2 text-sm text-[#E2DDB4]">
             A complete student-organised management club, part of the Department
@@ -29,17 +34,17 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <h3 className="text-xl font-semibold mb-4">Pages</h3>
           <ul className="space-y-3">
-            {["Home", "About", "Events", "Team","Contact"].map((page) => (
+            {["Home", "About", "Events", "Team", "Contact"].map((page) => (
               <li key={page}>
-                <a
-                  href={`/${page.toLowerCase()}`}
+                <Link
+                  to={page === "Home" ? "/" : `/${page.toLowerCase()}`} // ✅ react-router navigation
                   className="px-4 py-2 my-1.5 rounded-full bg-none text-white font-medium 
                              hover:bg-[#E2DDB4] hover:text-black 
                              active:bg-black active:text-[#F6EFD2]
                              transition-all duration-300 shadow-sm"
                 >
                   {page}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -71,6 +76,8 @@ export default function Footer() {
               <a
                 key={idx}
                 href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-[#F6EFD2] text-[#E43636] 
                            hover:bg-[#E2DDB4] hover:text-black 
                            active:bg-black active:text-[#F6EFD2] 
