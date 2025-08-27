@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <h3 className="text-xl font-semibold mb-4">Pages</h3>
           <ul className="space-y-3">
-            {["Home", "About", "Events", "Team", "Members", "Contact"].map((page) => (
+            {["Home", "About", "Events", "Team","Contact"].map((page) => (
               <li key={page}>
                 <a
                   href={`/${page.toLowerCase()}`}
@@ -90,7 +90,7 @@ export default function Footer() {
           href="https://inspireloop.onrender.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold underline hover:text-black transition"
+          className="font-bold uppercase hover:text-black transition"
         >
           Rakesh InspireLoop Tech
         </a>

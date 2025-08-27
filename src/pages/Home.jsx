@@ -107,7 +107,7 @@ export default function Home() {
           and be part of a club that thrives on passion and purpose.
         </p>
         <a
-          href="/contact"
+          href="/about"
           className="mt-8 inline-block px-8 py-4 bg-red-500 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-red-600 transition"
           data-aos="fade-up"
           data-aos-delay="400"

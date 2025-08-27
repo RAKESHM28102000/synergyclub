@@ -7,6 +7,55 @@ export default function Events() {
     AOS.init({ duration: 1200, once: true });
   }, []);
 
+  const events = [
+    {
+      name: "Farewell 2025",
+      desc: "A heartfelt farewell to our graduating seniors, filled with memories, joy, and celebrations.",
+      color: "text-red-500",
+      images: [
+        "/images/events/fw-1.jpeg",
+        "/images/events/fw-2.JPG",
+        "/images/events/fw-3.JPG",
+        "/images/events/fw-4.jpeg",
+         "/images/events/fw-5.jpeg",
+      ],
+    },
+    {
+      name: "INIZIO DI SINERGIO",
+      desc: "An innovation-driven event that fosters creativity, leadership, and collaboration.",
+      color: "text-gold",
+      images: [
+        "/images/events/ids.png",
+       "/images/events/ids-1.jpeg",
+      "/images/events/ids-2.jpeg",
+      "/images/events/ids-3.jpeg",
+        
+      ]
+    },
+    {
+      name: "NIRA - Women’s Day Celebration",
+      desc: "Dedicated to empowering women, celebrating achievements, and fostering equality.",
+      color: "text-white",
+      images: [
+        "/images/events/wds-1.png",
+        "/images/events/wds-2.jpeg",
+         "/images/events/wds-3.jpeg",
+         "/images/events/wds-4.jpeg",
+      ],
+    },
+    {
+      name: "Power BI for Managers",
+      desc: "Hands-on training on business analytics and visualization for future leaders.",
+      color: "text-gold",
+      images: [
+        "/images/events/pbi-1.jpg",
+        "/images/events/pbi-2.jpeg",
+        "/images/events/pbi-3.jpeg",
+       "/images/events/pbi-4.jpeg",
+      ],
+    },
+  ];
+
   return (
     <div className="bg-black text-white min-h-screen px-6 py-16 md:px-20">
       {/* Header */}
@@ -22,90 +71,44 @@ export default function Events() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          At <span className="text-gold">Synergy Club</span>, we host a variety of
-          events that inspire creativity, learning, and cultural unity. From
-          technical workshops to vibrant festivals — there’s something for everyone.
+          At <span className="text-gold">Synergy Club</span>, we host impactful
+          events that inspire creativity, learning, and unity. Here are our key highlights.
         </p>
       </div>
 
-      {/* Event Categories */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {/* MBA Events */}
-        <div
-          className="p-6 bg-red-900/30 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-        >
-          <h2 className="text-2xl font-bold text-red-500 mb-4">MBA Events</h2>
-          <p className="text-gray-300">
-            Interactive case studies, management competitions, and networking
-            events tailored for future business leaders.
+      {/* Event Sections */}
+      {events.map((event, i) => (
+        <div key={i} className="mb-20" data-aos="fade-up">
+          {/* Event Header */}
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${event.color}`}
+            data-aos="fade-right"
+          >
+            {event.name}
+          </h2>
+          <p className="text-gray-300 mb-8 max-w-3xl" data-aos="fade-left">
+            {event.desc}
           </p>
-        </div>
 
-        {/* Power BI Workshop */}
-        <div
-          className="p-6 bg-red-900/30 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <h2 className="text-2xl font-bold text-gold mb-4">Power BI Workshops</h2>
-          <p className="text-gray-300">
-            Hands-on training sessions on data analytics and visualization using
-            Microsoft Power BI to empower data-driven decision-making.
-          </p>
+          {/* Event Images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {event.images.map((img, idx) => (
+              <div
+                key={idx}
+                className="overflow-hidden rounded-xl shadow-lg border border-red-500"
+                data-aos="zoom-in"
+                data-aos-delay={idx * 100}
+              >
+                <img
+                  src={img}
+                  alt={`${event.name} ${idx + 1}`}
+                  className="w-full h-64 object-cover transform hover:scale-110 transition duration-500"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-
-        {/* Guest Lecture */}
-        <div
-          className="p-6 bg-red-900/30 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <h2 className="text-2xl font-bold text-white mb-4">Guest Lectures</h2>
-          <p className="text-gray-300">
-            Learn from industry experts, entrepreneurs, and academicians who share
-            valuable insights and experiences.
-          </p>
-        </div>
-
-        {/* Cultural Events */}
-        <div
-          className="p-6 bg-red-900/40 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-        >
-          <h2 className="text-2xl font-bold text-gold mb-4">Cultural Events</h2>
-          <p className="text-gray-300">
-            Music, dance, drama, and art – our cultural programs celebrate
-            creativity and unity. A platform for students to showcase their talent.
-          </p>
-        </div>
-
-        {/* Festival Celebrations */}
-        <div
-          className="p-6 bg-red-900/40 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <h2 className="text-2xl font-bold text-red-500 mb-4">Festival Celebrations</h2>
-          <p className="text-gray-300">
-            We celebrate Diwali, Holi, Christmas, Pongal, and other festivals with
-            grandeur — bringing together different cultures in harmony.
-          </p>
-        </div>
-
-        {/* Other Events */}
-        <div
-          className="p-6 bg-red-900/40 rounded-2xl shadow-lg hover:scale-105 transition"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <h2 className="text-2xl font-bold text-white mb-4">Other Activities</h2>
-          <p className="text-gray-300">
-            Hackathons, debates, quiz competitions, charity drives, and many more
-            engaging activities throughout the year.
-          </p>
-        </div>
-      </div>
+      ))}
 
       {/* Call to Action */}
       <div className="text-center mt-20" data-aos="zoom-in">
@@ -114,7 +117,7 @@ export default function Events() {
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-8">
           Don’t miss the chance to participate in exciting events, enhance your
-          skills, and create memories with a vibrant community.
+          skills, and create unforgettable memories with a vibrant community.
         </p>
         <a
           href="/contact"
