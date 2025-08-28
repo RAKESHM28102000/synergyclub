@@ -120,7 +120,7 @@ export default function Events() {
           skills, and create unforgettable memories with a vibrant community.
         </p>
         <a
-          href="/contact"
+          href="https://www.linkedin.com/company/synergy-mudoms/" target="_blank"
           className="px-8 py-4 bg-red-500 text-white font-semibold rounded-xl shadow-lg hover:bg-red-600 transition"
         >
           Register Now

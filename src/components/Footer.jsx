@@ -7,6 +7,7 @@ import {
   FaFacebook,
   FaYoutube,
   FaWhatsapp,
+  FaLinkedin,
 } from "react-icons/fa";
 import { Link } from "react-router-dom"; // ✅ import Link
 import synergyLogo from "/images/synergy logo.png"; // replace with actual logo
@@ -58,7 +59,7 @@ export default function Footer() {
               <FaPhoneAlt className="text-[#F6EFD2]" /> +91 98765 43210
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-[#F6EFD2]" /> synergy@unom.ac.in
+              <FaEnvelope className="text-[#F6EFD2]" /> synergy.infobank@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-[#F6EFD2]" /> University of Madras, Chennai
@@ -68,10 +69,10 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4 mt-5 text-xl">
             {[
-              { icon: <FaInstagram />, link: "#" },
-              { icon: <FaFacebook />, link: "#" },
-              { icon: <FaYoutube />, link: "#" },
-              { icon: <FaWhatsapp />, link: "#" },
+              { icon: <FaInstagram />, link: "https://www.linkedin.com/company/synergy-mudoms/" },
+              { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/synergy-mudoms/" },
+              { icon: <FaYoutube />, link: "https://www.linkedin.com/company/synergy-mudoms/" },
+              { icon: <FaWhatsapp />, link: "https://www.linkedin.com/company/synergy-mudoms/" },
             ].map((item, idx) => (
               <a
                 key={idx}
@@ -97,7 +98,7 @@ export default function Footer() {
           href="https://inspireloop.onrender.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold uppercase hover:text-black transition"
+          className="font-bold uppercase text-white bg-black p-1.5 rounded-lg hover:text-red-700 transition"
         >
           Rakesh InspireLoop Tech
         </a>

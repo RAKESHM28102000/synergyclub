@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import { Link } from "react-router-dom"; // ✅ import Link
 import About from "./About";
 import Events from "./Events";
 import Team from "./Team";
 import Contact from "./Contact";
 
-AOS.init();
-
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Hero Section */}
@@ -34,18 +37,18 @@ export default function Home() {
           data-aos="zoom-in"
           data-aos-delay="400"
         >
-          <a
-            href="/about"
+          <Link
+            to="/about"
             className="px-6 py-3 bg-red-500 text-white font-semibold rounded-xl shadow-lg hover:bg-red-600 transition"
           >
             Learn More
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="px-6 py-3 bg-gold text-black font-semibold rounded-xl shadow-lg hover:bg-yellow-500 transition"
           >
             Join Us
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -106,19 +109,21 @@ export default function Home() {
           The journey to success begins with a single step. Take that step today
           and be part of a club that thrives on passion and purpose.
         </p>
-        <a
-          href="/about"
+        <Link
+          to="/about"
           className="mt-8 inline-block px-8 py-4 bg-red-500 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-red-600 transition"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           Get Started
-        </a>
+        </Link>
       </section>
-      <About/>
-      <Events/>
-      <Team/>
-      <Contact/>
+
+      {/* Sections */}
+      <About />
+      <Events />
+      <Team />
+      <Contact />
     </div>
   );
 }

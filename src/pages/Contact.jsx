@@ -52,7 +52,7 @@ const Contact = () => {
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          <p>Email: synergyclub@unom.ac.in</p>
+          <p>Email:synergy.infobank@gmail.com</p>
           <p>Location: Department of Management Studies, University of Madras</p>
         </div>
 

@@ -15,7 +15,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[#E43636] px-6 md:px-12 py-3 flex justify-between items-center shadow-md">
+    <nav className="bg-[#cf0202] px-6 md:px-12 py-3 flex justify-between items-center shadow-md">
       {/* Logo & Name */}
       <div className="flex items-center gap-3">
         <img src={logo} alt="Synergy Logo" className="h-10 w-10 rounded-full" />
